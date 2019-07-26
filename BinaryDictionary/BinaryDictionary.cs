@@ -34,7 +34,7 @@ namespace BinaryDictionary
                 throw new ArgumentException("index must be positive");
             }
         
-            if (index >= Size)
+            if (index >= BufferSize)
             {
                 return false;
             }
@@ -53,7 +53,7 @@ namespace BinaryDictionary
                 throw new ArgumentException("index must be positive");
             }
 
-            if (index > Size)
+            if (index > BufferSize)
             {
                 return;
             }
@@ -65,7 +65,24 @@ namespace BinaryDictionary
             dictionaries[dictionaryIndex] ^= orValue;
         }
 
-        public int Size => dictionaries.Length * 32;
+        public int Count()
+        {
+            var result = 0;
+            foreach (var item in dictionaries)
+            {
+                for (int i = 0; i < 32; i++)
+                {
+                    var check = 1 << i;
+                    if ((item & check) != 0)
+                    {
+                        result += 1;
+                    }
+                }
+            }
+            return result;
+        }
+        
+        public int BufferSize => dictionaries.Length * 32;
 
         private void CheckDictionarySize(int index)
         {

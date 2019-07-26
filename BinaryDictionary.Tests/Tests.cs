@@ -35,9 +35,9 @@ namespace BinaryDictionary.Tests
             binaryDictionary.Contains(31).Should().Be(true);
             binaryDictionary.Contains(32).Should().Be(true);
 
-            binaryDictionary.Size.Should().Be(64);
+            binaryDictionary.BufferSize.Should().Be(64);
             
-            for (int i = 0; i < binaryDictionary.Size; i++)
+            for (int i = 0; i < binaryDictionary.BufferSize; i++)
             {
                 switch (i)
                 {
@@ -103,6 +103,18 @@ namespace BinaryDictionary.Tests
             var binaryDictionary = new BinaryDictionary();
             binaryDictionary.Invoking(b => b.Remove(-1))
                 .Should().Throw<ArgumentException>();
+        }
+
+        [Fact]
+        public void TestCount()
+        {
+            var binaryDictionary = new BinaryDictionary();
+            for (int i = 0; i < 10; i++)
+            {
+                binaryDictionary.Add(i);
+            }
+
+            binaryDictionary.Count().Should().Be(10);
         }
     }
 }
