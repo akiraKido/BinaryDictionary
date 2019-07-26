@@ -12,6 +12,8 @@ namespace BinaryDictionary.Tests
         [InlineData(31, 31, true)]
         [InlineData(29, 31, false)]
         [InlineData(32, 32, true)]
+        [InlineData(64, 64, true)]
+        [InlineData(1000000, 1000000, true)]
         public void TestRegisterAndContains(int input, int check, bool expected)
         {
             var binaryDictionary = new BinaryDictionary();

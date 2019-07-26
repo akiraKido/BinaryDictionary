@@ -69,7 +69,7 @@ namespace BinaryDictionary
 
         private void CheckDictionarySize(int index)
         {
-            var necessarySize = index / 32;
+            var necessarySize = index / 32 + 1;
             if (necessarySize < dictionaries.Length)
             {
                 return;
