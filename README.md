@@ -45,6 +45,7 @@ binaryDictionary.Contains(1); // false
 
 
 (original)
+
 |                       Method |             Mean |           Error |          StdDev |
 |----------------------------- |-----------------:|----------------:|----------------:|
 |             BinaryDictionary |         29.55 ns |       0.2493 ns |       0.2210 ns |
