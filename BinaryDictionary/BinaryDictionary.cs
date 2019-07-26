@@ -1,6 +1,7 @@
 ﻿using System;
 
-namespace BinaryDictionary
+// ReSharper disable once CheckNamespace
+namespace BinaryDictionaryNS
 {
     public class BinaryDictionary
     {

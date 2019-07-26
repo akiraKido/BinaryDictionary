@@ -2,7 +2,7 @@ using System;
 using Xunit;
 using FluentAssertions;
 
-namespace BinaryDictionary.Tests
+namespace BinaryDictionaryNS.Tests
 {
     public class Tests
     {

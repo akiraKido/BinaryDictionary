@@ -2,7 +2,7 @@
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Running;
 
-namespace BinaryDictionary.Bench
+namespace BinaryDictionaryNS.Bench
 {
     internal static class Program
     {
